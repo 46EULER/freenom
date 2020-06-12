@@ -42,23 +42,38 @@ Documentation: [English version](https://github.com/luolongfei/freenom/blob/mast
 众所周知，Freenom是地球上唯一一个提供免费顶级域名的商家，不过需要每年续期，每次续期最多一年。由于我申请了一堆域名，而且不是同一时段申请的，
 所以每次续期都觉得折腾，于是就写了这个自动续期的脚本。
 
+
+
 ### 🍭 效果
-![邮件示例](https://s2.ax1x.com/2020/01/31/139Rrd.png "邮件内容")
 
 无论是续期成败或者脚本执行出错，都会收到的程序发出的邮件。如果是续期成败相关的邮件，邮件会包括未续期域名的到期天数等内容。
 邮件参考了微信发送的注销公众号的邮件样式。
+<details>
+<summary> 效果图</summary>
 
-### 🎁 事前准备
+![邮件示例](https://s2.ax1x.com/2020/01/31/139Rrd.png "邮件内容")
+
+</details>
+
+<p>
+
+<details>
+<summary><b><font size="5"> 🎁 事前准备</font></b></summary>
+
 - 发信邮箱：为了方便理解又称机器人邮箱，用于发送通知邮件。目前支持`Gmail`、`QQ邮箱`以及`163邮箱`，程序会自动判断发信邮箱类型并使用合适的配置。推荐使用`Gmail`。
 - 收信邮箱：用于接收机器人发出的通知邮件。推荐使用`QQ邮箱`，`QQ邮箱`唯一的好处只是收到邮件会在`QQ`弹出消息。
 - VPS：随便一台服务器都行，系统推荐`Centos7`，另外PHP版本需在`php7.1`及以上。**（注：没有 VPS 也行，本项目支持在 Github Actions 上执行，完全白嫖，具体使用方法请参考「 [🤣本项目最简单的使用方法](#-本项目最简单的使用方法) 」）**
-- 没有了
+- 如果你不想使用邮件推送，也可以使用后续介绍的 Telegram bot，灵活配置。
 
-### 📪 配置发信邮箱
+<details open>
+<summary><b><font size="3"> 📪 配置发信邮箱</font></b></summary>
+
 下面分别介绍`Gmail`、`QQ邮箱`以及`163邮箱`的设置，你只用看自己需要的部分。注意，`QQ邮箱`与`163邮箱`均使用账户加授权码的方式登录，
 `谷歌邮箱`使用账户加密码的方式登录，请知悉。另外还想吐槽一下，国产邮箱你得花一毛钱给邮箱提供方发一条短信才能拿到授权码。
 
-#### 设置Gmail
+<details open>
+<summary> <font size="3"> 设置Gmail</font> </summary>
+
 ***
 1、在`设置>转发和POP/IMAP`中，勾选
 - 对所有邮件启用 POP 
@@ -79,7 +94,12 @@ Documentation: [English version](https://github.com/luolongfei/freenom/blob/mast
 
 登录谷歌邮箱后，去[gmail的这个界面](https://accounts.google.com/b/0/DisplayUnlockCaptcha)点击允许。这种情况较为少见。
 
-#### 设置QQ邮箱
+</details>
+
+<details>
+<summary> <font size="3"> 设置QQ邮箱</font> </summary>
+
+
 ***
 在`设置>账户>POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务`下，开启`POP3/SMTP服务`
 
@@ -95,7 +115,11 @@ Documentation: [English version](https://github.com/luolongfei/freenom/blob/mast
 
 ![qq邮箱配置04](https://s2.ax1x.com/2020/01/31/13coDI.png "qq邮箱配置04")
 
-#### 设置163邮箱
+</details>
+
+<details>
+<summary> <font size="3"> 设置163邮箱</font> </summary>
+
 ***
 在`设置>POP3/SMTP/IMAP`下，开启`POP3/SMTP服务`和`IMAP/SMTP服务`并保存
 
@@ -106,8 +130,12 @@ Documentation: [English version](https://github.com/luolongfei/freenom/blob/mast
 现在点击侧边栏的`客户端授权密码`，并获取授权码，你看到画面可能和我不一样，因为我已经获取了授权码，所以只有`重置授权码`按钮，这里自己根据网站提示申请获取授权码，网易和腾讯一样恶心，需要你用手机给它发一条短信才能拿到授权码
 
 ![163邮箱配置03](https://s2.ax1x.com/2020/01/31/13WMaq.png "163邮箱配置03")
+</details>
+</details>
+<p>
+<details>
+<summary><b><font size="3">Telegram bot</font></b></summary>
 
-#### Telegram bot
 ***
 上面介绍了三种邮箱的设置方法，如果你不想使用邮件推送，也可以使用 Telegram bot，灵活配置。在`.env`文件中，将
 `TELEGRAM_BOT_ENABLE`的值改为`true`，即可启用 Telegram bot，同样的，将`MAIL_ENABLE`下的值改为`false`即可关闭邮件推送方式。
@@ -123,9 +151,15 @@ Telegram 3rd party bot 只填写一个配置值：`TELEGRAM_BOT_URL`，通过使
 
 有关第三方推送 Telegram bot 的更多内容请参考作者项目: [Fndroid/tg_push_bot](https://github.com/Fndroid/tg_push_bot)
 
-### *与通知相关的设置到此就完成了，下面可以愉快的配置本程序了* :)
+</details>
 
-### 🚧 配置脚本
+#### *与通知相关的设置到此就完成了，下面可以愉快的配置本程序了* :)
+
+</details>
+<p>
+<details>
+<summary><b><font size="5"> 🚧 配置脚本</font></b></summary>
+
 所有操作均在Centos7系统下进行，其它Linux发行版大同小异
 #### 获取源码
 ```bash
@@ -150,8 +184,12 @@ $ vim .env
 
 # 编辑完成后，按“Esc”回到命令模式，输入“:wq”回车即保存并退出，不会用vim编辑器的问下谷歌大爷:)
 ```
+</details>
+<p>
 
-### 🎈 添加计划任务
+<details>
+<summary><b><font size="5"> 🎈 添加计划任务</font></b></summary>
+
 #### 安装crontabs以及cronie
 ```bash
 $ yum -y install cronie crontabs
@@ -211,8 +249,14 @@ $ cd /data/wwwroot/freenom/ && php run
 不出意外的话，你将收到一封关于域名情况的邮件。
 
 <hr>
+</details>
 
-### 🤣 本项目最简单的使用方法
+
+<p>
+
+<details open>
+<summary><b><font size="5"> 🤣 本项目最简单的使用方法</font></b></summary>
+
 上面说了一堆都是基于你有自己的 `VPS` 的情况下，如果没有 `VPS` 又想自动续期 `Freenom` 的域名，或者单纯不想配置那么多东西，
 可以直接在 `Github Actions` 上跑本项目，`Github Actions` 会为项目创建一个虚拟环境，并在执行后自动销毁。
 
@@ -234,6 +278,7 @@ TELEGRAM_BOT_TOKEN、TELEGRAM_BOT_ENABLE、NOTICE_FREQ
 3、在心里默念作者好帅，给个 `star` 并把本项目推荐给更多的人（用的人越多，作者更新的动力越足），把省下的买 `VPS` 的巨款 [打赏一点点儿](#-捐赠-donate) 给作者 😝
 
 <hr>
+</details>
 
 遇到任何问题或 Bug 欢迎提 [issues](https://github.com/luolongfei/freenom/issues) （请按模板格式提 `issues`，以便作者更快复现你的问题），
 如果 `Freenom` 改变算法导致此项目失效，请提 [issues](https://github.com/luolongfei/freenom/issues) 告知，我会及时修复，本项目长期维护。
