@@ -33,13 +33,12 @@ return [
         'chatID' => env('TELEGRAM_CHAT_ID'), // 你的chat_id，通过发送“/start”给@userinfobot可以获取自己的id
         'token' => env('TELEGRAM_BOT_TOKEN'), // Telegram Bot 的 token
         'enable' => env('TELEGRAM_BOT_ENABLE') // 是否启用，默认不启用
-<<<<<<< HEAD
+
     ],
     'telegram3rd' => [
         'botURL' => env('TELEGRAM_BOT_URL'), // 你的push url，通过发送“/start”给@notificationme_bot可以获取自己的url
         'enable' => env('TELEGRAM_3rdBOT_ENABLE') // 是否启用，默认不启用
-=======
->>>>>>> 94eba31fb37f96fb34bcabc89953335d0d2110e1
+
     ],
 
     'locale' => 'zh', // 指定语言包，位于resources/lang/目录下
