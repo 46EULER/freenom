@@ -60,6 +60,7 @@ Documentation: [English version](https://github.com/luolongfei/freenom/blob/mast
 <details>
 <summary><b><font size="5"> 🎁 事前准备</font></b></summary>
 
+#### 🎁 事前准备
 - 发信邮箱：为了方便理解又称机器人邮箱，用于发送通知邮件。目前支持`Gmail`、`QQ邮箱`以及`163邮箱`，程序会自动判断发信邮箱类型并使用合适的配置。推荐使用`Gmail`。
 - 收信邮箱：用于接收机器人发出的通知邮件。推荐使用`QQ邮箱`，`QQ邮箱`唯一的好处只是收到邮件会在`QQ`弹出消息。
 - VPS：随便一台服务器都行，系统推荐`Centos7`，另外PHP版本需在`php7.1`及以上。**（注：没有 VPS 也行，本项目支持在 Github Actions 上执行，完全白嫖，具体使用方法请参考「 [🤣本项目最简单的使用方法](#-本项目最简单的使用方法) 」）**
@@ -160,6 +161,7 @@ Telegram 3rd party bot 只填写一个配置值：`TELEGRAM_BOT_URL`，通过使
 <details>
 <summary><b><font size="5"> 🚧 配置脚本</font></b></summary>
 
+#### 🚧 配置脚本
 所有操作均在Centos7系统下进行，其它Linux发行版大同小异
 #### 获取源码
 ```bash
@@ -190,6 +192,7 @@ $ vim .env
 <details>
 <summary><b><font size="5"> 🎈 添加计划任务</font></b></summary>
 
+#### 🎈 添加计划任务
 #### 安装crontabs以及cronie
 ```bash
 $ yum -y install cronie crontabs
@@ -257,6 +260,7 @@ $ cd /data/wwwroot/freenom/ && php run
 <details open>
 <summary><b><font size="5"> 🤣 本项目最简单的使用方法</font></b></summary>
 
+#### 🤣 本项目最简单的使用方法
 上面说了一堆都是基于你有自己的 `VPS` 的情况下，如果没有 `VPS` 又想自动续期 `Freenom` 的域名，或者单纯不想配置那么多东西，
 可以直接在 `Github Actions` 上跑本项目，`Github Actions` 会为项目创建一个虚拟环境，并在执行后自动销毁。
 
