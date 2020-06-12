@@ -58,7 +58,7 @@ Documentation: [English version](https://github.com/luolongfei/freenom/blob/mast
 <p>
 
 <details>
-### <summary><b><font size="5"> ### 🎁 事前准备</font></b></summary>
+<summary><b><font size="5"> 🎁 事前准备</font></b></summary>
 
 #### 🎁 事前准备
 - 发信邮箱：为了方便理解又称机器人邮箱，用于发送通知邮件。目前支持`Gmail`、`QQ邮箱`以及`163邮箱`，程序会自动判断发信邮箱类型并使用合适的配置。推荐使用`Gmail`。
